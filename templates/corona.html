@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <title>India Corona Cases</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'corona.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav">
+    <li><a href="http://harikrishna.pythonanywhere.com/">Home</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table border="1" width="1150" id="customers">
+        <caption><b style="color: Red;">Track Corona Cases state wise in INDIA:</b></caption>
+        <hr>
+        <thead>
+        <tr>
+          <th>SNO</th>
+          <th>State</th>
+          <th>Total</th>
+          <th>Cured</th>
+          <th>Death</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>Andhra Pradesh</td>
+          <td>{{ ap.Total }}</td>
+          <td>{{ ap.Cured }}</td>
+          <td>{{ ap.Death }}</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Andaman and Nicobar Islands</td>
+          <td>{{ Andaman.Total }}</td>
+          <td>{{ Andaman.Cured }}</td>
+          <td>{{ Andaman.Death }}</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Arunachal Pradesh</td>
+          <td>{{ Arunachal.Total }}</td>
+          <td>{{ Arunachal.Cured }}</td>
+          <td>{{ Arunachal.Death }}</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Assam</td>
+          <td>{{ Assam.Total }}</td>
+          <td>{{ Assam.Cured }}</td>
+          <td>{{ Assam.Death }}</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Bihar</td>
+          <td>{{ Bihar.Total }}</td>
+          <td>{{ Bihar.Cured }}</td>
+          <td>{{ Bihar.Death }}</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Chandigarh</td>
+          <td>{{ Chandigarh.Total }}</td>
+          <td>{{ Chandigarh.Cured }}</td>
+          <td>{{ Chandigarh.Death }}</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Chhattisgarh</td>
+          <td>{{ Chhattisgarh.Total }}</td>
+          <td>{{ Chhattisgarh.Cured }}</td>
+          <td>{{ Chhattisgarh.Death }}</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Delhi</td>
+          <td>{{ Delhi.Total }}</td>
+          <td>{{ Delhi.Cured }}</td>
+          <td>{{ Delhi.Death }}</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Goa</td>
+          <td>{{ Goa.Total }}</td>
+          <td>{{ Goa.Cured }}</td>
+          <td>{{ Goa.Death }}</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Gujarat</td>
+          <td>{{ Gujarat.Total }}</td>
+          <td>{{ Gujarat.Cured }}</td>
+          <td>{{ Gujarat.Death }}</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Haryana</td>
+          <td>{{ Haryana.Total }}</td>
+          <td>{{ Haryana.Cured }}</td>
+          <td>{{ Haryana.Death }}</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Himachal</td>
+          <td>{{ Himachal.Total }}</td>
+          <td>{{ Himachal.Cured }}</td>
+          <td>{{ Himachal.Death }}</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>Jammu and Kashmir</td>
+          <td>{{ jk.Total }}</td>
+          <td>{{ jk.Cured }}</td>
+          <td>{{ jk.Death }}</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>Jharkhand</td>
+          <td>{{ Jharkhand.Total }}</td>
+          <td>{{ Jharkhand.Cured }}</td>
+          <td>{{ Jharkhand.Death }}</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>Karnataka</td>
+          <td>{{ Karnataka.Total }}</td>
+          <td>{{ Karnataka.Cured }}</td>
+          <td>{{ Karnataka.Death }}</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>Kerala</td>
+          <td>{{ Kerala.Total }}</td>
+          <td>{{ Kerala.Cured }}</td>
+          <td>{{ Kerala.Death }}</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>Ladakh</td>
+          <td>{{ Ladakh.Total }}</td>
+          <td>{{ Ladakh.Cured }}</td>
+          <td>{{ Ladakh.Death }}</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>Madhya Pradesh</td>
+          <td>{{ mp.Total }}</td>
+          <td>{{ mp.Cured }}</td>
+          <td>{{ mp.Death }}</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>Maharashtra</td>
+          <td>{{ Maharashtra.Total }}</td>
+          <td>{{ Maharashtra.Cured }}</td>
+          <td>{{ Maharashtra.Death }}</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>Manipur</td>
+          <td>{{ Manipur.Total }}</td>
+          <td>{{ Manipur.Cured }}</td>
+          <td>{{ Manipur.Death }}</td>
+        </tr>
+        <tr>
+          <td>21</td>
+          <td>Meghalaya</td>
+          <td>{{ Meghalaya.Total }}</td>
+          <td>{{ Meghalaya.Cured }}</td>
+          <td>{{ Meghalaya.Death }}</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>Mizoram</td>
+          <td>{{ Mizoram.Total }}</td>
+          <td>{{ Mizoram.Cured }}</td>
+          <td>{{ Mizoram.Death }}</td>
+        </tr>
+        <tr>
+          <td>23</td>
+          <td>Odisha</td>
+          <td>{{ Odisha.Total }}</td>
+          <td>{{ Odisha.Cured }}</td>
+          <td>{{ Odisha.Death }}</td>
+        </tr>
+        <tr>
+          <td>24</td>
+          <td>Puducherry</td>
+          <td>{{ Puducherry.Total }}</td>
+          <td>{{ Puducherry.Cured }}</td>
+          <td>{{ Puducherry.Death }}</td>
+        </tr>
+        <tr>
+          <td>25</td>
+          <td>Punjab</td>
+          <td>{{ Punjab.Total }}</td>
+          <td>{{ Punjab.Cured }}</td>
+          <td>{{ Punjab.Death }}</td>
+        </tr>
+        <tr>
+          <td>26</td>
+          <td>Rajasthan</td>
+          <td>{{ Rajasthan.Total }}</td>
+          <td>{{ Rajasthan.Cured }}</td>
+          <td>{{ Rajasthan.Death }}</td>
+        </tr>
+        <tr>
+          <td>27</td>
+          <td>Tamil Nadu</td>
+          <td>{{ tn.Total }}</td>
+          <td>{{ tn.Cured }}</td>
+          <td>{{ tn.Death }}</td>
+        </tr>
+        <tr>
+          <td>28</td>
+          <td>Telengana</td>
+          <td>{{ Telengana.Total }}</td>
+          <td>{{ Telengana.Cured }}</td>
+          <td>{{ Telengana.Death }}</td>
+        </tr>
+        <tr>
+          <td>29</td>
+          <td>Tripura</td>
+          <td>{{ Tripura.Total }}</td>
+          <td>{{ Tripura.Cured }}</td>
+          <td>{{ Tripura.Death }}</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>Uttarakhand</td>
+          <td>{{ Uttarakhand.Total }}</td>
+          <td>{{ Uttarakhand.Cured }}</td>
+          <td>{{ Uttarakhand.Death }}</td>
+        </tr>
+        <tr>
+          <td>31</td>
+          <td>Uttar Pradesh</td>
+          <td>{{ up.Total }}</td>
+          <td>{{ up.Cured }}</td>
+          <td>{{ up.Death }}</td>
+        </tr>
+        <tr>
+          <td>32</td>
+          <td>West Bengal</td>
+          <td>{{ wb.Total }}</td>
+          <td>{{ wb.Cured }}</td>
+          <td>{{ wb.Death }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
